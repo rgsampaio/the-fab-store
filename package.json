@@ -1,5 +1,6 @@
 {
   "name": "the-fab-store",
+  "homepage": "/the-fab-store",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
