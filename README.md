@@ -1,6 +1,7 @@
 # 🍏 The Fab Store
 
-![alt text](image.png)
+<img width="1502" height="843" alt="image" src="https://github.com/user-attachments/assets/8b23b2ab-001c-4002-bbff-4ba96c6d6e64" />
+
 
 > 🎸 **Acesse a loja rodando ao vivo:** https://ricardosampaio.dev/the-fab-store
 
