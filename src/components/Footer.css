@@ -110,7 +110,8 @@
 }
 
 .rgsampaio {
-    color: var(--color-1100);
+    font-weight: 600;
+    color: var(--color-1200);
 }
 
 .footer-icons {
@@ -172,10 +173,6 @@
 
     .btn-subscribe {
         padding: 12px 25px;
-    }
-
-    .rgsampaio {
-        color: #8a8a8a;
     }
 
     .rgsampaio:hover {

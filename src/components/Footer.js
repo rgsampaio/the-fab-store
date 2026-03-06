@@ -112,7 +112,7 @@ export default function Footer() {
 
                 <div className="footer-bottom">
                     <p className="copyright">© 2026 The Fab Store. Todos os direitos reservados.</p>
-                    <p>Desenvolvido por <a className="rgsampaio" href="https://rgsampaio.github.io/portfolio/" target="_blank" rel="noopener noreferrer">Ricardo Sampaio</a>.</p>
+                    <p>Desenvolvido por <a className="rgsampaio" href="https://ricardosampaio.dev/" target="_blank" rel="noopener noreferrer">Ricardo Sampaio</a>.</p>
                 </div>
             </div>
         </footer>

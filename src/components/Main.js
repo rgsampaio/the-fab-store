@@ -54,7 +54,7 @@ function Main() {
     useEffect(() => {
         //Simulação do atraso de um serivdor real
         setTimeout(() => {
-        fetch('/api/products.json')
+        fetch('/the-fab-store/api/products.json')
             .then((response) => {
                 if (!response.ok) {
                     throw new Error('Erro ao buscar os produtos da loja.');
