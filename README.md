@@ -1,53 +1,51 @@
-# 🍏 The Fab Store
+<div align="center">
+  <h1>The Fab Store</h1>
+  <p>E-commerce temático dos Beatles com carrinho global, animações de scroll e filtros dinâmicos.</p>
 
-<img width="1502" height="843" alt="image" src="https://github.com/user-attachments/assets/8b23b2ab-001c-4002-bbff-4ba96c6d6e64" />
+  <a href="https://ricardosampaio.dev/the-fab-store/">Ver projeto ao vivo</a>
+</div>
+
+<br />
+
+<div align="center">
+  <img src="https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=white" />
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black" />
+  <img src="https://img.shields.io/badge/GSAP-88CE02?logo=greensock&logoColor=white" />
+</div>
+
+<br />
+
+## Preview
+
+<img width="1538" height="865" alt="Captura de tela 2026-05-08 153727" src="https://github.com/user-attachments/assets/ffc7ae7a-95cf-4894-94ea-53ccfb9fb03e" />
 
 
-> 🎸 **Acesse a loja rodando ao vivo:** https://ricardosampaio.dev/the-fab-store
 
-## 💡 Sobre o Projeto
-A The Fab Store não é só mais um "projeto de curso". É um e-commerce temático dedicado ao legado dos Beatles, construído do zero no Figma, até chegar no código, para simular os desafios reais que enfrentamos no mercado de Front-end. 
+## Features
 
-O meu objetivo aqui foi ir muito além de montar uma interface estática. Eu queria focar no que realmente converte e segura um usuário em uma loja: **performance, gerenciamento de estado limpo e uma experiência imersiva e impecável no celular.**
+- **Carrinho global** — Estado centralizado com Context API, acessível de qualquer componente
+- **Animações de scroll** — Revelações e transições controladas pelo GSAP ScrollTrigger
+- **Filtros dinâmicos** — Navegação por categorias com atualização instantânea
+- **Checkout interativo** — Modal de finalização com resumo do pedido
+- **Design responsivo** — Layout adaptado para desktop e mobile
 
-## 🛠️ Como as coisas funcionam por baixo do panos
+## Estrutura
 
-Para fazer a loja rodar lisa, tomei algumas decisões de arquitetura cruciais:
+```
+src/
+├── assets/             # Imagens, ícones e fontes
+├── components/         # Header, Main, Footer, SidebarCart, CheckoutModal
+├── context/            # CartContext (estado global do carrinho)
+├── utils/              # Dados dos produtos
+├── App.js              # Layout e integração GSAP
+└── index.css           # Estilos globais e variáveis
+```
 
-* **React.js:** A base de tudo, focando em componentização real e reaproveitamento de interface.
-* **Context API (O cérebro do carrinho):** Em vez de passar os dados do carrinho de mão em mão, criei um estado global (`CartContext`). Qualquer botão "Comprar" do site conversa instantaneamente com a barra lateral, somando itens e calculando totais de forma centralizada.
-* **GSAP (GreenSock):** O CSS puro não dava conta da imersão que eu queria. Trouxe o GSAP para assumir o controle do *smooth scroll* e das animações baseadas na rolagem, garantindo uma fluidez visual.
-
-## 🥊 As Batalhas que Venci
-
-Fazer o código rodar no `localhost` é fácil. O desafio foi domar a performance em produção. Aqui estão os principais problemas de engenharia que resolvi:
-
-**1. Orquestra Visual e ScrollTrigger**
-Criar a revelação da logo na seção de "Legado" exigiu sincronizar escala, opacidade e posição estritamente atrelados à rolagem do usuário. Usei o `ScrollTrigger` do GSAP para calcular o ponto exato de interseção na tela, garantindo que a animação pesada rodasse de forma suave, sem engasgar o *scroll* da página ou causar quedas de *framerate*.
-
-**2. A Guerra do Carrinho no Mobile (GSAP vs. Touch Nativo)**
-O motor de scroll do GSAP é incrível, mas no celular, ele costuma "sequestrar" a tela. Quando o usuário abria o carrinho, a rolagem da lista de produtos travava. 
-* **A solução:** Criei uma lógica no React (via `useEffect`) que monitora a abertura da Sidebar e **pausa ativamente** o motor do GSAP (`smoother.paused()`). Juntando isso com a regra `overscroll-behavior: contain` no CSS, liberei o toque nativo do aparelho e o carrinho voltou a rodar liso.
-
-**3. Engenharia de Performance e Diagnóstico (PageSpeed Insights)**
-E-commerce lento não vende. Foquei em otimizar o carregamento da aplicação para dispositivos móveis, priorizando a experiência do usuário real acima de métricas de vaidade. Implementei uma série de melhorias recomendadas pelo Lighthouse para garantir estabilidade e velocidade:
-
-* **Otimização do Caminho Crítico:** Movi as fontes do Google Fonts para o HTML com `preconnect` e utilizei `font-display: swap` na fonte customizada (*Bootle*), eliminando o atraso visual (FOIT) e permitindo que o conteúdo seja lido instantaneamente.
-* **Estratégia de Cache e Assets:** Comprimi imagens pesadas para o formato `.webp` (reduzindo o payload em mais de 80%) e configurei um arquivo `vercel.json` com regras de cache agressivas. Isso garante que, em acessos recorrentes, a loja carregue quase instantaneamente a partir do dispositivo do usuário.
-
-## 🚀 Como rodar na sua máquina
-
-A arquitetura não é uma caixa preta. Se quiser ver o código funcionando localmente:
+## Rodando localmente
 
 ```bash
-# Clone este repositório
 git clone https://github.com/ricardosampaiodev/the-fab-store.git
-
-# Entre na pasta
 cd the-fab-store
-
-# Instale as dependências
 npm install
-
-# Rode o servidor
 npm start
+```
